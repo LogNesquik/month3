@@ -1,5 +1,6 @@
 # pip install flet[all]
 import flet as ft
+import datetime
 
 def main(page: ft.Page):
     page.title = 'My first Flet app'
@@ -10,9 +11,12 @@ def main(page: ft.Page):
 
     def on_button_click(e):
         name = name_input.value.strip()
-        print(name)
+        current_time = datetime.datetime.now().strftime("%Y:%m:%d - %H:%M:%S")
+        print(f"Пользователь ввел: {name}")
+        print(f"Время ввода: {current_time}")
         if name:
-            text_hello.value = f'Hello, {name}!'
+            current_time = datetime.datetime.now().strftime("%Y:%m:%d - %H:%M:%S")
+            text_hello.value = f'{current_time} - Привет, {name}!'
             text_hello.color = ft.Colors.GREEN
             name_input.value = None
         else:
