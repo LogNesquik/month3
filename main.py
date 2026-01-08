@@ -22,7 +22,6 @@ def main(page: ft.Page):
         else:
             text_hello.value = "Введите корректное имя!"
             text_hello.color = ft.Colors.RED
-            name_input.value = None
         page.update()
         # page.update()
 
